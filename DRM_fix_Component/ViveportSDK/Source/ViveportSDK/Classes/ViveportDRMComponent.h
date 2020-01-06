@@ -23,9 +23,6 @@ protected:
 	void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
 	/** The APP ID for auth verify */
     FString VIVEPORT_ID = "YOUR_VIVEPORT_ID";
 

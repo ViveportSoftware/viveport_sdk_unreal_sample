@@ -8,7 +8,7 @@ UViveportDRMComponent::UViveportDRMComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 }
 
@@ -28,12 +28,6 @@ void UViveportDRMComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
     UViveportApi::Shutdown(&myShutdownCallback);
 }
 
-// Called every frame
-void UViveportDRMComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-}
-
 void UViveportDRMComponent::MyLicenseChecker::OnSuccess(
     long long issue_time,
     long long expiration_time,
@@ -44,8 +38,9 @@ void UViveportDRMComponent::MyLicenseChecker::OnSuccess(
 
 }
 
+// Failed to verify the license, and the app will exit now. If you want to show some error messages or do something, you can change here.
 void UViveportDRMComponent::MyLicenseChecker::OnFailure(int error_code, const FString& error_message) {
-    FString fstring = FString::Printf(TEXT("Verify failed!\n error_code=%d,\n error_message=%s"),
+    FString fstring = FString::Printf(TEXT("Failed to verify the license.\n error_code=%d,\n error_message=%s"),
         error_code,
         *error_message);
     FPlatformMisc::RequestExit(true);
