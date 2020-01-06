@@ -27,10 +27,10 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	/** The APP ID for auth verify */
-    FString APP_ID = "bd67b286-aafc-449d-8896-bb7e9b351876";
+    FString VIVEPORT_ID = "YOUR_VIVEPORT_ID";
 
     /** Public key for auth verify */
-    FString APP_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDFypCg0OHfBC+VZLSWPbNSgDo9qg/yQORDwGy1rKIboMj3IXn4Zy6h6bgn8kiMY7VI0lPwIj9lijT3ZxkzuTsI5GsK//Y1bqeTol4OUFR+47gj+TUuekAS2WMtglKox+/7mO6CA1gV+jZrAKo6YSVmPd+oFsgisRcqEgNh5MIURQIDAQAB";
+    FString VIVEPORT_KEY = "YOUR_VIVEPORT_KEY";
 
 private:
     // callback interface

@@ -17,8 +17,8 @@ UViveportDRMComponent::UViveportDRMComponent()
 void UViveportDRMComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	UViveportApi::GetLicense(&myLicenseChecker, APP_ID, APP_KEY);
-    UViveportApi::Init(&myInitCallback, APP_ID);
+	UViveportApi::GetLicense(&myLicenseChecker, VIVEPORT_ID, VIVEPORT_KEY);
+    UViveportApi::Init(&myInitCallback, VIVEPORT_ID);
 }
 
 void UViveportDRMComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
