@@ -2,8 +2,9 @@
 
 ## For DRM wrapper Error, other use this VIVEPORT SDK DRM solution.
 
+* Download ViveportSDK Unreal. https://developer.viveport.com/documents/sdk/en/unrealengine.html
 * Download DRM_fix_Component.
-* Copy ViveportSDK to your Unreal project .\Plugins folder.
+* Copy DRM_fix_Component\ViveportSDK folder to your Unreal project .\Plugins folder.
 * Change .\Plugins\ViveportSDK\Source\ViveportSDK\Classes\ViveportDRMComponent.h to your VIVEPORT ID and VIVEPORT KEY.
 * Remove .\Plugins\ViveportSDK\Binaries , .\Plugins\ViveportSDK\Intermediate , your Project's .\Binaries and your Project's .\Intermediate folder.
 * Start your .uproject. ureanl will start rebuild your project.
